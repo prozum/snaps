@@ -1,0 +1,37 @@
+name: llvm
+version: 3
+summary: LLVM sum.
+description: LLVM desc.
+
+apps:
+  clang:
+    command: usr/bin/clang
+    plugs: [home]
+  gdb:
+    command: usr/bin/gdb
+    plugs: [home]
+  cmake:
+    command: usr/bin/cmake
+    plugs: [home]
+  bison:
+    command: usr/bin/bison
+    plugs: [home]
+  flex:
+    command: usr/bin/flex
+    plugs: [home]
+  lli:
+    command: usr/bin/lli
+    plugs: [home]
+  llvm-link:
+    command: usr/bin/llvm-link
+    plugs: [home]
+parts:
+  llvm:
+    plugin: make
+    source: .
+    stage-packages: [cmake,gdb,bison,flex]
+    build-packages:
+      - git
+      - cmake
+      - clang
+      - build-essential
