@@ -1,5 +1,5 @@
 name: llvm
-version: 5
+version: 6
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
@@ -23,10 +23,9 @@ parts:
   llvm:
     plugin: make
     source: .
-    stage-packages: [cmake,gdb,bison,flex]
+    stage-packages: [cmake,make,gdb,bison,flex]
     build-packages:
       - git
-      - make
       - cmake
       - clang
       - build-essential
