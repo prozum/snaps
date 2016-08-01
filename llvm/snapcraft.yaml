@@ -1,5 +1,5 @@
 name: llvm
-version: 6
+version: 7
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
@@ -9,6 +9,8 @@ apps:
     command: usr/bin/clang
   gdb:
     command: usr/bin/gdb
+  make:
+    command: usr/bin/make
   cmake:
     command: usr/bin/cmake
   bison:
