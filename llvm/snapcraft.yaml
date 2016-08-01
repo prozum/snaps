@@ -26,6 +26,7 @@ parts:
     stage-packages: [cmake,gdb,bison,flex]
     build-packages:
       - git
+      - make
       - cmake
       - clang
       - build-essential
