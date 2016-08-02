@@ -9,8 +9,8 @@ all:
 	
 	mkdir cmake-build
 	cd cmake-build && \
-	cmake -DCLANG_BUILD_EXAMPLES=false -DCLANG_INCLUDE_DOCS=false -DCLANG_INCLUDE_TESTS=false -DCLANG_INCLUDE_DOCS=false \
-	      -DCLANG_BUILD_EXAMPLES=false -DLLVM_INCLUDE_EXAMPLES=false -DLLVM_INCLUDE_DOCS=false -DLLVM_INCLUDE_TESTS=false \
+	cmake -DLLVM_INCLUDE_EXAMPLES=false -DLLVM_INCLUDE_DOCS=false -DLLVM_INCLUDE_TESTS=false \
+	      -DCLANG_BUILD_EXAMPLES=false -DCLANG_INCLUDE_DOCS=false -DCLANG_INCLUDE_TESTS=false \
 		  -DLLVM_ENABLE_RTTI=true \
 	  	  -DBUILD_SHARED_LIBS=false -DCMAKE_INSTALL_PREFIX=/usr ../llvm/
 	cd cmake-build && make -j 4
