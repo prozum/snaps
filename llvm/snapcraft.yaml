@@ -1,10 +1,12 @@
 name: llvm
-version: 7
+version: 0.8
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
 
 apps:
+  bash:
+    command: bin/bash
   clang:
     command: usr/bin/clang
   gdb:
@@ -25,7 +27,7 @@ parts:
   llvm:
     plugin: make
     source: .
-    stage-packages: [cmake,make,gdb,bison,flex]
+    stage-packages: [bash,cmake,make,gdb,bison,flex,binutils]
     build-packages:
       - git
       - cmake
