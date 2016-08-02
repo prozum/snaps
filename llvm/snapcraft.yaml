@@ -1,5 +1,5 @@
 name: llvm
-version: 0.8
+version: 0.1.0
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
@@ -27,7 +27,7 @@ parts:
   llvm:
     plugin: make
     source: .
-    stage-packages: [bash,cmake,make,gdb,bison,flex,binutils]
+    stage-packages: [bash,cmake,make,gdb,bison,flex,binutils,libgcc1,libc6-dev,libgcc-5-dev]
     build-packages:
       - git
       - cmake
