@@ -8,8 +8,10 @@ all:
 	git clone -b release_38 --single-branch --depth 1 http://llvm.org/git/openmp.git llvm/projects/openmp
 	
 	mkdir cmake-build
-	cd cmake-build && cmake -DCLANG_BUILD_EXAMPLES=false -DCLANG_INCLUDE_DOCS=false -DCLANG_INCLUDE_TESTS=false -DCLANG_INCLUDE_DOCS=false \
+	cd cmake-build
+	cmake -DCLANG_BUILD_EXAMPLES=false -DCLANG_INCLUDE_DOCS=false -DCLANG_INCLUDE_TESTS=false -DCLANG_INCLUDE_DOCS=false \
 	      -DCLANG_BUILD_EXAMPLES=false -DLLVM_INCLUDE_EXAMPLES=false -DLLVM_INCLUDE_DOCS=false -DLLVM_INCLUDE_TESTS=false \
+		  -DLLVM_ENABLE_RTTI=true \
 	  	  -DBUILD_SHARED_LIBS=false -DCMAKE_INSTALL_PREFIX=/usr ../llvm/
 	cd cmake-build && make -j 4
 
