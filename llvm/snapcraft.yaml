@@ -1,5 +1,5 @@
 name: llvm
-version: 0.2.0
+version: 0.2.1
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
@@ -43,7 +43,8 @@ parts:
       - bison
       - flex
       - binutils
-      - libgcc1
+      - libc6
       - libc6-dev
+      - libgcc1
       - libgcc-5-dev
       - libstdc++-5-dev
