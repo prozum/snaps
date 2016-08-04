@@ -61,4 +61,4 @@ parts:
       - libgcc1
       - libgcc-5-dev
       - libstdc++-5-dev
-	  - libtinfo-dev
+      - libtinfo-dev
