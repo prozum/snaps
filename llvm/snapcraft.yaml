@@ -1,5 +1,5 @@
 name: llvm
-version: 0.2.1
+version: 0.2.3
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
@@ -9,8 +9,12 @@ apps:
     command: bin/bash
   clang:
     command: usr/bin/clang
+  clangpp:
+    command: usr/bin/clang++
   gcc:
     command: usr/bin/gcc
+  gpp:
+    command: usr/bin/g++
   gdb:
     command: usr/bin/gdb
   make:
@@ -26,6 +30,10 @@ apps:
   llvm-link:
     command: usr/bin/llvm-link
 parts:
+  toolchain:
+    plugin: copy
+    files: 
+      SnapToolchain.cmake: /usr/lib/x86_64-linux-gnu/cmake/
   llvm:
     plugin: make
     source: .
@@ -39,6 +47,7 @@ parts:
       - cmake
       - make
       - gcc
+      - g++
       - gdb
       - bison
       - flex

@@ -17,6 +17,7 @@ all:
 
 install:
 	cd cmake-build && make install 
+	sed -i 's/^if(CMAKE_TOOLCHAIN_FILE)/if(NOT CMAKE_TOOLCHAIN_FILE)\n  set(CMAKE_TOOLCHAIN_FILE $$ENV{SNAP}\/usr\/lib\/x86_64-linux-gnu\/cmake\/SnapToolchain.cmake)\nendif()\nif(CMAKE_TOOLCHAIN_FILE)/g' ../install/usr/share/cmake-3.5/Modules/CMakeDetermineSystem.cmake
 
 clean:
 	cd cmake-build && make clean
