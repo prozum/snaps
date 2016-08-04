@@ -1,5 +1,5 @@
 name: llvm
-version: 0.2.3
+version: 0.2.4
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
@@ -20,7 +20,7 @@ apps:
   make:
     command: usr/bin/make
   cmake:
-    command: usr/bin/cmake
+    command: usr/bin/cmake-wrapper
   bison:
     command: usr/bin/bison
   flex:
@@ -34,6 +34,10 @@ parts:
     plugin: copy
     files: 
       SnapToolchain.cmake: /usr/lib/x86_64-linux-gnu/cmake/
+  cmake-wrapper:
+    plugin: copy
+    files:
+      cmake-wrapper: /usr/bin/cmake-wrapper
   llvm:
     plugin: make
     source: .
