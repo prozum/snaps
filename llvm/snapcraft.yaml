@@ -1,5 +1,5 @@
 name: llvm
-version: 0.2.6
+version: 0.2.7
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
