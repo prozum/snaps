@@ -1,5 +1,5 @@
 name: llvm
-version: 0.2.7
+version: 0.2.8
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
@@ -60,6 +60,7 @@ parts:
       - libc6-dev
       - libgcc1
       - libgcc-5-dev
+      - libstdc++6
       - libstdc++-5-dev
       - libtinfo-dev
       - zlib1g-dev
