@@ -1,10 +1,6 @@
 set(CMAKE_SYSTEM_NAME Linux)
 
-set(CMAKE_SYSROOT /snap/llvm/current)
-#set(CMAKE_STAGING_PREFIX /home/devel/stage)
-
-set(CMAKE_C_COMPILER /snap/llvm/current/usr/bin/gcc)
-set(CMAKE_CXX_COMPILER /snap/llvm/current/usr/bin/g++)
+set(CMAKE_SYSROOT $ENV{SNAP})
 
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)
 set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
