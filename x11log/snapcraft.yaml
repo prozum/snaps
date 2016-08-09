@@ -1,0 +1,18 @@
+name: x11log
+version: 0.0.1
+summary: X11 Keylogger
+description: x11log is a tiny, simplistic, non-privileged, unobtrusive local/remote userspace keylogger for X11 sessions. It only requires libX11 and, if you want remote logging to a HTTP server, libcurl. This snap package is made to test snapd and firejail X11 sandboxing support.
+confinement: strict
+
+apps:
+  x11log:
+    command: x11log
+    plugs: [x11]
+parts:
+  x11log:
+    plugin: make
+    source: https://github.com/esonn/x11log.git
+    build-packages:
+     - build-essential
+     - libx11-dev
+     - libcurl3
