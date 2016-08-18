@@ -1,10 +1,9 @@
 all:
-	gcc --version
-	g++ --version
 	git clone -b release_38 --single-branch --depth 1 http://llvm.org/git/llvm.git llvm
 	
 	git clone -b release_38 --single-branch --depth 1 http://llvm.org/git/clang.git llvm/tools/clang
 	git clone -b release_38 --single-branch --depth 1 http://llvm.org/git/polly.git llvm/tools/polly
+	git clone -b release_38 --single-branch --depth 1 http://llvm.org/git/lldb.git llvm/tools/lldb
 	
 	git clone -b release_38 --single-branch --depth 1 http://llvm.org/git/compiler-rt.git llvm/projects/compiler-rt
 	git clone -b release_38 --single-branch --depth 1 http://llvm.org/git/openmp.git llvm/projects/openmp

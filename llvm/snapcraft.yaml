@@ -1,5 +1,5 @@
 name: llvm
-version: 0.3.1
+version: 0.4.0
 summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
@@ -11,6 +11,8 @@ apps:
     command: usr/bin/clang
   clangpp:
     command: usr/bin/clang++
+  lldb:
+    command: usr/bin/lldb
   gcc:
     command: usr/bin/gcc
   gpp:
@@ -46,6 +48,12 @@ parts:
       - cmake
       - clang
       - build-essential
+      - libncurses5-dev
+      - libxml2-dev
+      - libedit-dev
+      - swig
+      - doxygen
+      - graphviz
     stage-packages: 
       - bash
       - cmake
