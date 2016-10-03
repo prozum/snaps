@@ -4,6 +4,11 @@ summary: LLVM sum.
 description: LLVM desc.
 confinement: devmode
 
+environment:
+  C_INCLUDE_PATH: $SNAP/usr/include:$SNAP/usr/include/x86_64-linux-gnu:$SNAP/usr/lib/gcc/x86_64-linux-gnu/5/include:$SNAP/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed
+  CPP_INCLUDE_PATH: $C_INCLUDE_PATH:$SNAP/usr/include/c++/5
+  BISON_PKGDATADIR: $SNAP/usr/share/bison
+
 apps:
   bash:
     command: bin/bash
@@ -22,7 +27,7 @@ apps:
   make:
     command: usr/bin/make
   cmake:
-    command: usr/bin/cmake-wrapper
+    command: usr/bin/cmake
   bison:
     command: usr/bin/bison
   flex:
@@ -36,10 +41,6 @@ parts:
     plugin: copy
     files: 
       SnapToolchain.cmake: /usr/lib/x86_64-linux-gnu/cmake/
-  cmake-wrapper:
-    plugin: copy
-    files:
-      cmake-wrapper: /usr/bin/cmake-wrapper
   llvm:
     plugin: make
     source: .

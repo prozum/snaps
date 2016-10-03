@@ -1,7 +1,0 @@
-#!/bin/sh
-
-export C_INCLUDE_PATH=$SNAP/usr/include:$SNAP/usr/include/x86_64-linux-gnu:$SNAP/usr/lib/gcc/x86_64-linux-gnu/5/include:$SNAP/usr/lib/gcc/x86_64-linux-gnu/5/include-fixed
-export CPP_INCLUDE_PATH=$C_INCLUDE_PATH:$SNAP/usr/include/c++/5
-export BISON_PKGDATADIR=$SNAP/usr/share/bison
-
-exec "$SNAP/usr/bin/cmake" "$@"
